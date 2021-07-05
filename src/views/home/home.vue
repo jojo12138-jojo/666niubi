@@ -97,6 +97,7 @@
             //获取图片加载完，把高度赋值给taboffsettop
             imgload() {
                 this.taboffsettop = this.$refs.tabcontroler.$el.offsetTop
+                this.$refs.scroll.refresh()
             },
             //事件监听
             tabclick(index) {
@@ -115,7 +116,7 @@
                 this.$refs.tabcontroler.activeindex = index
             },
 
-            //监听滚动位置，来判断是否显示回到顶部
+            //监听滚动位置
             contentscroll(position) {
                 //判断是否显示 返回顶部
                 this.istop = (-position.y) > 1000
